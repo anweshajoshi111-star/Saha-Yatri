@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saha Yatri - Book Now</title>
+    <link rel="stylesheet" href="service.css">
+</head>
+<body>
+
+    <div class="booking-container">
+        <h2>Book a Caregiver</h2>
+        <form id="bookingForm">
+            <textarea placeholder="Describe the patient's condition..." required></textarea>
+            
+            <select id="care-dropdown" required>
+                <option value="">Select Type of Care</option>
+                <option value="basic">Basic Care</option>
+                <option value="clinical">Clinical Recovery</option>
+                <option value="specialized">Specialized Care</option>
+            </select>
+
+            <select id="district-dropdown" required>
+                <option value="">Select District</option>
+                <option value="Kathmandu">Kathmandu</option>
+                <option value="Lalitpur">Lalitpur</option>
+                <option value="Bhaktapur">Bhaktapur</option>
+            </select>
+
+            <input type="text" placeholder="Your Phone Number" required>
+            
+            <button type="submit" class="btn-submit">Request Caregiver</button>
+        </form>
+    </div>
+
+    <script>
+        // Runs as soon as the page opens
+        window.addEventListener('DOMContentLoaded', () => {
+            // 1. Look for the ?service= part in the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceKey = urlParams.get('service');
+
+            // 2. Find our dropdown
+            const dropdown = document.getElementById('care-dropdown');
+
+            // 3. If a service was found, select it automatically
+            if (serviceKey && dropdown) {
+                dropdown.value = serviceKey;
+                // Highlight the dropdown so the user sees it's filled
+                dropdown.style.borderColor = "#4a90e2";
+                dropdown.style.backgroundColor = "#eef6ff";
+            }
+
+            // 4. Handle form submission
+            const form = document.getElementById('bookingForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert("Success! The Saha Yatri team will call you shortly.");
+                window.location.href = "index.html"; // Takes them back home
+            });
+        });
+    </script>
+</body>
+</html>

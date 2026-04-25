@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caregivers - Saha Yatri</title>
+
+<link rel="stylesheet" href="caregiver.css">
+</head>
+
+<body onload="filterCaregivers()">
+  <main>
+  <nav class="navbar">
+      
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img id="bakwas"src="images/hi.png" alt="Sahayatri Logo">
+                    </a>
+                    <h1>Sahaयात्री</h1>
+                    </div>
+                    <header class="naam">
+                   <h1>Our Caregivers 🤝</h1>
+  <p id="bottle" > Find and choose the right care expert for your needs</p>
+  </header>
+
+                </div>
+              </nav>
+            
+
+  
+
+<!-- PROFILES -->
+<div class="profiles">
+
+  <!-- BASIC CARE -->
+  <div class="profile" data-type="basic"
+  onclick="openProfile('Sita Sharma','Basic Care Specialist','Elderly care, Physiotherapy support')">
+    <img src="images/sita.png">
+    <h3>Sita Sharma</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.8</span>
+    </div>
+    <p class="tag">Basic Care</p>
+  </div>
+
+  <div class="profile" data-type="basic"
+  onclick="openProfile('Ram Thapa','Basic Care Specialist','Daily assistance, Post-surgery support')">
+    <img src="images/ram.png">
+    <h3>Ram Thapa</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.5</span>
+    </div>
+    <p class="tag">Basic Care</p>
+  </div>
+
+  <div class="profile" data-type="basic"
+  onclick="openProfile('Rita Adhikari','Basic Care Specialist','Daily assistance')">
+    <img src="images/rita.png">
+    <h3>Rita Adhikari</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.3</span>
+    </div>
+    <p class="tag">Basic Care</p>
+  </div>
+
+  <div class="profile" data-type="basic"
+  onclick="openProfile('Mohit Basnet','Basic Care Specialist','Daily assistance')">
+    <img src="images/mohit.png">
+    <h3>Mohit Basnet</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.5</span>
+    </div>
+    <p class="tag">Basic Care</p>
+  </div>
+
+  <!-- MEDICAL CARE -->
+  <div class="profile" data-type="medical"
+  onclick="openProfile('Maya Karki','Medical Care Specialist','Post-surgery care, Patient monitoring')">
+    <img src="images/maya.png">
+    <h3>Maya Karki</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.4</span>
+    </div>
+    <p class="tag">Medical Care</p>
+  </div>
+
+  <div class="profile" data-type="medical"
+  onclick="openProfile('Bikash Rai','Medical Care Specialist','Paralysis support, Daily assistance')">
+    <img src="images/bikash.png">
+    <h3>Bikash Rai</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.6</span>
+    </div>
+    <p class="tag">Medical Care</p>
+  </div>
+
+  <div class="profile" data-type="medical"
+  onclick="openProfile('Rakesh Kumar','Medical Care Specialist','Physiotherapy support')">
+    <img src="images/rakesh.png">
+    <h3>Rakesh Kumar</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.5</span>
+    </div>
+    <p class="tag">Medical Care</p>
+  </div>
+
+  <div class="profile" data-type="medical"
+  onclick="openProfile('Rohit Kholi','Medical Care Specialist','Post-surgery care')">
+    <img src="images/rohit.png">
+    <h3>Rohit Kholi</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.5</span>
+    </div>
+    <p class="tag">Medical Care</p>
+  </div>
+
+  <!-- SPECIALIZED CARE -->
+  <div class="profile" data-type="specialized"
+  onclick="openProfile('Anita Gurung','Specialized Care Specialist','Dementia care, Elderly companionship')">
+    <img src="images/anita.png">
+    <h3>Anita Gurung</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.9</span>
+    </div>
+    <p class="tag">Specialized Care</p>
+  </div>
+
+  <div class="profile" data-type="specialized"
+  onclick="openProfile('Shova Tamang','Specialized Care Specialist','Paralysis support, Dementia care')">
+    <img src="images/shova.png">
+    <h3>Shova Tamang</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.5</span>
+    </div>
+    <p class="tag">Specialized Care</p>
+  </div>
+
+  <div class="profile" data-type="specialized"
+  onclick="openProfile('Amod Acharya','Specialized Care Specialist','Paralysis support, Daily assistance')">
+    <img src="images/allu.png">
+    <h3>Amod Acharya</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.5</span>
+    </div>
+    <p class="tag">Specialized Care</p>
+  </div>
+
+  <div class="profile" data-type="specialized"
+  onclick="openProfile('Supriya Gautam','Specialized Care Specialist','Dementia care, Paralysis support')">
+    <img src="images/supriya.png">
+    <h3>Supriya Gautam</h3>
+    <div class="meta">
+      <span class="verified">✔ Verified</span>
+      <span class="rating">⭐ 4.5</span>
+    </div>
+    <p class="tag">Specialized Care</p>
+  </div>
+
+</div>
+
+<!-- NO RESULT -->
+<p id="noResult" class="no-result" style="display:none;">
+  No caregivers found 😕
+</p>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+
+  <div class="modal-content">
+
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <h2 id="name"></h2>
+    <p id="desc"></p>
+
+    <!-- IMPORTANT BUTTON -->
+    <button id="bookBtn" onclick="bookCaregiver()">Book Caregiver</button>
+
+  </div>
+
+</div>
+
+<script src="caregiver.js"></script>
+</main>
+ <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sahaयात्री. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

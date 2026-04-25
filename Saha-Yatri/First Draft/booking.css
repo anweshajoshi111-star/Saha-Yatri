@@ -1,0 +1,90 @@
+body {
+  font-family: cursive;
+  margin: 0;
+  background: #f5f6fa;
+  color: #27187E;
+}
+
+/* HEADER */
+header {
+  background: #27187E;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* SAHA */
+.soha {
+  font-family: cursive;
+  letter-spacing: 2px;
+}
+
+/* यात्री */
+.yatri {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+
+header p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+/* SECTION */
+section {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* INPUTS */
+textarea, input, select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* BUTTON */
+button {
+  padding: 10px;
+  background: #27187E;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3d2bb3;
+}
+
+/* FOOTER */
+footer {
+  background: #27187E;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
