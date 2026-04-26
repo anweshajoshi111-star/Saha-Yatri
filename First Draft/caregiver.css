@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: cursive;
+  background: #f7f7ff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.hero-header {
+  background: #27187E;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+/* NAVBAR KO ISTYLE */
+.navbar {
+  background-color: #2e1a81;
+  color: white;
+  padding: 10px 5%;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+#bakwas {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#bottle {
+  display: block;
+}
+
+/* TITLE SECTION KO LAGI */
+.naam {
+  flex: 2;
+  text-align: center;
+  align-items: center;
+  padding-right: 50px;
+}
+
+/* GRID */
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+  gap: 20px;
+  padding: 30px;
+
+  justify-content: center;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.profile {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+
+  width: 100%;
+  max-width: 220px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.profile:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2e1a81;
+  margin-bottom: 10px;
+}
+
+/* META */
+.meta {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.verified {
+  color: green;
+  font-weight: bold;
+}
+
+.rating {
+  color: #27187E;
+}
+
+/* TAG */
+.tag {
+  font-size: 13px;
+  color: gray;
+}
+
+/* AVAILABILITY  KO LAGI*/
+.availability {
+  font-weight: bold;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.available {
+  color: #2ecc71;
+}
+
+.not-available {
+  color: #e74c3c;
+}
+
+/* WORK TYPE */
+.work-type {
+  background-color: #eee;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* fade effect ko lagi*/
+.profile .not-available {
+  opacity: 0.7;
+}
+
+/* MODAL BACKDROP KO LAGI*/
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+/* MODAL BOX */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 250px;
+}
+
+/* BUTTON */
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #27187E;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 15px auto 0 auto;
+}
+
+/* BOOKING POPUP ko lagi 😪 */
+.booking-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: white;
+  padding: 25px 30px;
+  border-radius: 15px;
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  z-index: 10000;
+}
+
+/* FOOTER 😐 */
+.footer {
+  background-color: #2e1a81;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* MAIN */
+main {
+  flex: 1;
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.filter-bar select {
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 2px solid #27187E;
+  background: white;
+  color: #27187E;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
