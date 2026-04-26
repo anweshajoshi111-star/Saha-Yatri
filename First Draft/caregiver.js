@@ -2,11 +2,7 @@ let selectedName = "";
 let selectedAvailability = "";
 let fromService = false;
 
-<<<<<<< HEAD
-// detect if user came from service page
-=======
 // user service page ma aako ho ki nai tha pauna
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 window.onload = function () {
   const params = new URLSearchParams(window.location.search);
   const type = params.get("type");
@@ -16,11 +12,7 @@ window.onload = function () {
   filterCaregivers();
 };
 
-<<<<<<< HEAD
-// FILTER
-=======
 // FILTER GARNA KO LAGI
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 function filterCaregivers() {
   const type = new URLSearchParams(window.location.search).get("type");
   const cards = document.querySelectorAll(".profile");
@@ -55,11 +47,7 @@ function openProfile(name, role, skills, availability) {
 
   const btn = document.getElementById("bookBtn");
 
-<<<<<<< HEAD
-  // show button only if coming from service page AND available
-=======
   // button service page ma huda matra dekhauna
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
   if (fromService && availability === "Available") {
     btn.style.display = "block";
     btn.disabled = false;
@@ -78,11 +66,7 @@ function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
 
-<<<<<<< HEAD
-// BOOK
-=======
 // BOOK garna 
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 function bookCaregiver() {
   if (selectedAvailability !== "Available") {
     alert("Sorry, this caregiver is currently not available 😕");
@@ -103,8 +87,6 @@ function bookCaregiver() {
   `;
 
   document.body.appendChild(popup);
-<<<<<<< HEAD
-=======
 }
 function applyFilters() {
   const availability = document.getElementById("availabilityFilter").value;
@@ -130,5 +112,4 @@ function applyFilters() {
 
     card.style.display = show ? "flex" : "none";
   });
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 }

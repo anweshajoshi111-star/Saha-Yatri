@@ -6,11 +6,7 @@ const hamburger = document.querySelector('.hamburger');
             hamburger.classList.toggle('active');
         });
 
-<<<<<<< HEAD
-        // Smooth scrolling
-=======
         // Smooth scrolling ko lagi
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

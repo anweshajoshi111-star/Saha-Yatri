@@ -19,12 +19,7 @@ body {
   text-align: center;
   padding: 30px;
 }
-
-<<<<<<< HEAD
-/* NAVBAR */
-=======
 /* NAVBAR KO ISTYLE */
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 .navbar {
   background-color: #2e1a81;
   color: white;
@@ -70,11 +65,7 @@ body {
   display: block;
 }
 
-<<<<<<< HEAD
-/* TITLE SECTION */
-=======
 /* TITLE SECTION KO LAGI */
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 .naam {
   flex: 2;
   text-align: center;
@@ -152,11 +143,7 @@ body {
   color: gray;
 }
 
-<<<<<<< HEAD
-/* AVAILABILITY */
-=======
 /* AVAILABILITY  KO LAGI*/
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 .availability {
   font-weight: bold;
   margin-top: 6px;
@@ -181,20 +168,12 @@ body {
   margin-top: 6px;
 }
 
-<<<<<<< HEAD
-/* optional fade effect */
-=======
 /* fade effect ko lagi*/
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 .profile .not-available {
   opacity: 0.7;
 }
 
-<<<<<<< HEAD
-/* MODAL BACKDROP */
-=======
 /* MODAL BACKDROP KO LAGI*/
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 .modal {
   display: none;
   position: fixed;
@@ -229,11 +208,7 @@ button {
   margin: 15px auto 0 auto;
 }
 
-<<<<<<< HEAD
-/* BOOKING POPUP */
-=======
 /* BOOKING POPUP ko lagi 😪 */
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 .booking-popup {
   position: fixed;
   top: 50%;
@@ -249,11 +224,7 @@ button {
   z-index: 10000;
 }
 
-<<<<<<< HEAD
-/* FOOTER */
-=======
 /* FOOTER 😐 */
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 .footer {
   background-color: #2e1a81;
   color: white;
@@ -266,8 +237,6 @@ button {
 /* MAIN */
 main {
   flex: 1;
-<<<<<<< HEAD
-=======
 }
 
 .filter-bar {
@@ -287,5 +256,4 @@ main {
   font-weight: bold;
   cursor: pointer;
   outline: none;
->>>>>>> adced960eb308c3f8b5d3e1d2fec9bafd6859600
 }
