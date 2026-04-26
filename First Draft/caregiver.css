@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,6 +7,9 @@
 body {
   font-family: cursive;
   background: #f7f7ff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* HEADER */
@@ -18,20 +20,74 @@ body {
   padding: 30px;
 }
 
-/* GRID — FIXED CENTERING ISSUE */
+/* NAVBAR */
+.navbar {
+  background-color: #2e1a81;
+  color: white;
+  padding: 10px 5%;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+#bakwas {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#bottle {
+  display: block;
+}
+
+/* TITLE SECTION */
+.naam {
+  flex: 2;
+  text-align: center;
+  align-items: center;
+  padding-right: 50px;
+}
+
+/* GRID */
 .profiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
   gap: 20px;
   padding: 30px;
 
-  justify-content: center;   /* 🔥 FIX: centers cards */
+  justify-content: center;
   align-items: start;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* CARD — SINGLE CLEAN VERSION (REMOVED DUPLICATE ISSUE) */
+/* CARD */
 .profile {
   background: white;
   border-radius: 16px;
@@ -57,11 +113,12 @@ body {
 
 /* IMAGE */
 .profile img {
-  width: 85px;
-  height: 85px;
-  object-fit: cover;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border: 3px solid #27187E;
+  object-fit: cover;
+  border: 3px solid #2e1a81;
+  margin-bottom: 10px;
 }
 
 /* META */
@@ -85,6 +142,36 @@ body {
 .tag {
   font-size: 13px;
   color: gray;
+}
+
+/* AVAILABILITY */
+.availability {
+  font-weight: bold;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.available {
+  color: #2ecc71;
+}
+
+.not-available {
+  color: #e74c3c;
+}
+
+/* WORK TYPE */
+.work-type {
+  background-color: #eee;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* optional fade effect */
+.profile .not-available {
+  opacity: 0.7;
 }
 
 /* MODAL BACKDROP */
@@ -122,7 +209,7 @@ button {
   margin: 15px auto 0 auto;
 }
 
-/* BOOKING POPUP — CENTER FIXED */
+/* BOOKING POPUP */
 .booking-popup {
   position: fixed;
   top: 50%;
@@ -137,81 +224,18 @@ button {
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   z-index: 10000;
 }
-#bakwas{
-    height:auto;
-    width:100px;
-    display:block;
-    margin-right:10px;
-}
- 
 
+/* FOOTER */
 .footer {
-    background-color: #2e1a81;
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 40px;
-    
-    width: 100%;
-}
-.profile img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Makes them circular like the screenshot */
-    object-fit: cover; /* Prevents stretching */
-    border: 3px solid #2e1a81;
-    margin-bottom: 10px;
-}
-.navbar {
-    background-color: #2e1a81; 
-    color: white;
-    padding: 10px 5%;
+  background-color: #2e1a81;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 40px;
+  width: 100%;
 }
 
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img {
-    height: 50px; 
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
-#bottle{
-  flex-direction :column;
-  display:block;
-}
-.naam{
-  flex:2;
-  text-align:center;
- align-items:center;
- padding-right:50px;
-
-}
-main{
-  flex:1;
-}
-body{
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
-  margin:0;
+/* MAIN */
+main {
+  flex: 1;
 }

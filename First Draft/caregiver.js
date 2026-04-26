@@ -1,4 +1,5 @@
 let selectedName = "";
+let selectedAvailability = "";
 let fromService = false;
 
 // detect if user came from service page
@@ -32,24 +33,29 @@ function filterCaregivers() {
 }
 
 // OPEN PROFILE
-function openProfile(name, role, skills) {
+function openProfile(name, role, skills, availability) {
   selectedName = name;
+  selectedAvailability = availability;
 
   document.getElementById("name").innerText = name;
 
-  // 🟢 SHOW SKILLS INSTEAD OF "can't book"
   document.getElementById("desc").innerHTML = `
     <b>${role}</b><br><br>
-    <b>Skills:</b> ${skills}
+    <b>Skills:</b> ${skills}<br><br>
+    <b>Availability:</b> ${availability}
   `;
 
-  // BOOK BUTTON CONTROL
   const btn = document.getElementById("bookBtn");
 
-  if (fromService) {
+  // show button only if coming from service page AND available
+  if (fromService && availability === "Available") {
     btn.style.display = "block";
+    btn.disabled = false;
+    btn.style.opacity = "1";
   } else {
-    btn.style.display = "none";
+    btn.style.display = "block";
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
   }
 
   document.getElementById("modal").style.display = "flex";
@@ -62,6 +68,11 @@ function closeModal() {
 
 // BOOK
 function bookCaregiver() {
+  if (selectedAvailability !== "Available") {
+    alert("Sorry, this caregiver is currently not available 😕");
+    return;
+  }
+
   document.getElementById("modal").style.display = "none";
 
   const popup = document.createElement("div");
