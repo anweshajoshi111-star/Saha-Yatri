@@ -2,21 +2,24 @@ let selectedName = "";
 let selectedAvailability = "";
 let fromService = false;
 
-// user service page ma aako ho ki nai tha pauna
+/* ---------------------------
+   INIT
+----------------------------*/
 window.onload = function () {
   const params = new URLSearchParams(window.location.search);
   const type = params.get("type");
 
   fromService = type !== null;
 
-  filterCaregivers();
+  // if coming from service page, filter by type
+  filterByCategory(type);
 };
 
-// FILTER GARNA KO LAGI
-function filterCaregivers() {
-  const type = new URLSearchParams(window.location.search).get("type");
+/* ---------------------------
+   CATEGORY FILTER (Basic / Medical / Specialized)
+----------------------------*/
+function filterByCategory(type) {
   const cards = document.querySelectorAll(".profile");
-
   let count = 0;
 
   cards.forEach(card => {
@@ -32,7 +35,44 @@ function filterCaregivers() {
     count === 0 ? "block" : "none";
 }
 
-// OPEN PROFILE
+/* ---------------------------
+   AVAILABILITY / TIME FILTER (NEW FILTER SYSTEM)
+----------------------------*/
+function filterCaregivers(filterType) {
+  const cards = document.querySelectorAll(".profile");
+
+  cards.forEach(card => {
+    const availability = card.querySelector(".availability")?.classList.contains("available")
+      ? "available"
+      : "not-available";
+
+    const time = card.querySelector(".work-type")?.innerText.toLowerCase();
+
+    let show = true;
+
+    // Availability filters
+    if (filterType === "available" && availability !== "available") show = false;
+    if (filterType === "not-available" && availability !== "not-available") show = false;
+
+    // Time filters
+    if (filterType === "part-time" && !time.includes("part-time")) show = false;
+    if (filterType === "full-time" && !time.includes("full-time")) show = false;
+
+    card.style.display = show ? "flex" : "none";
+  });
+}
+
+/* reset filter */
+function resetFilter() {
+  const cards = document.querySelectorAll(".profile");
+  cards.forEach(card => {
+    card.style.display = "flex";
+  });
+}
+
+/* ---------------------------
+   PROFILE MODAL
+----------------------------*/
 function openProfile(name, role, skills, availability) {
   selectedName = name;
   selectedAvailability = availability;
@@ -47,7 +87,6 @@ function openProfile(name, role, skills, availability) {
 
   const btn = document.getElementById("bookBtn");
 
-  // button service page ma huda matra dekhauna
   if (fromService && availability === "Available") {
     btn.style.display = "block";
     btn.disabled = false;
@@ -61,12 +100,11 @@ function openProfile(name, role, skills, availability) {
   document.getElementById("modal").style.display = "flex";
 }
 
-// CLOSE
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
 
-// BOOK garna 
+/* BOOKING KO LAGI */
 function bookCaregiver() {
   if (selectedAvailability !== "Available") {
     alert("Sorry, this caregiver is currently not available 😕");
@@ -88,28 +126,24 @@ function bookCaregiver() {
 
   document.body.appendChild(popup);
 }
-function applyFilters() {
-  const availability = document.getElementById("availabilityFilter").value;
-  const time = document.getElementById("timeFilter").value;
 
-  const cards = document.querySelectorAll(".profile");
+// open/close dropdown
+function toggleDropdown(id) {
+  const box = document.getElementById(id);
 
-  cards.forEach(card => {
-    const cardAvailability = card.querySelector(".availability")?.innerText;
-    const cardTime = card.querySelector(".work-type")?.innerText;
-
-    let show = true;
-
-    // Availability filter ko lagi
-    if (availability !== "all" && cardAvailability !== availability) {
-      show = false;
-    }
-
-    // Time filter ko lagi
-    if (time !== "all" && cardTime !== time) {
-      show = false;
-    }
-
-    card.style.display = show ? "flex" : "none";
+  // close other dropdowns first
+  document.querySelectorAll(".dropdown-box").forEach(d => {
+    if (d.id !== id) d.style.display = "none";
   });
+
+  box.style.display = box.style.display === "block" ? "none" : "block";
 }
+
+// close dropdown if clicking outside
+window.onclick = function(event) {
+  if (!event.target.matches('.filter-btn')) {
+    document.querySelectorAll(".dropdown-box").forEach(box => {
+      box.style.display = "none";
+    });
+  }
+};

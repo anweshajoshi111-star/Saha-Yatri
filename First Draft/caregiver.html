@@ -26,6 +26,34 @@
   </div>
 </nav>
 
+<div class="filter-section">
+
+  <!-- AVAILABILITY DROPDOWN -->
+  <div class="dropdown">
+    <button class="filter-btn" onclick="toggleDropdown('availBox')">
+      Availability ▼
+    </button>
+
+    <div id="availBox" class="dropdown-box">
+      <button onclick="filterCaregivers('available')">Available</button>
+      <button onclick="filterCaregivers('not-available')">Not Available</button>
+    </div>
+  </div>
+
+  <!-- TIME DROPDOWN KO LAGI -->
+  <div class="dropdown">
+    <button class="filter-btn" onclick="toggleDropdown('timeBox')">
+      Time ▼
+    </button>
+
+    <div id="timeBox" class="dropdown-box">
+      <button onclick="filterCaregivers('part-time')">Part-time</button>
+      <button onclick="filterCaregivers('full-time')">Full-time</button>
+    </div>
+  </div>
+
+</div>
+
 <!-- PROFILES -->
 <div class="profiles">
 
